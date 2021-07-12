@@ -1,4 +1,15 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  resources :coupons, only: [:index, :new, :create, :show]
+
+  # The resource above roughly generates:
+  # get "/coupons" => "coupons#index"
+  # get "/coupons/:id" => "coupons#show"
+  # get "/coupons/new" => "coupons#new"
+  # get "/coupons/:id/edit" => "coupons#edit"
+  # post "/coupons" => "coupons#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
